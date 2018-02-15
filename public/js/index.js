@@ -9,7 +9,6 @@ for (var i = 0; i < 9; i++) {
 
   var newImage = document.createElement('img');
   newImage.setAttribute('src', images);
-  newImage.setAttribute('class', 'img-thumbnail');
   newImage.setAttribute('class', 'img-style');
   newImage.setAttribute('draggable', 'true');
   newImage.setAttribute('id', numberRandom);
@@ -21,14 +20,14 @@ var input = $('.input-js');
 console.log(input);
 console.log(searchButton);
 
-searchButton.on('click', function () {
+searchButton.on('click', function() {
   console.log('click');
   var valueInput = input.val();
   console.log(valueInput);
   // funcion para imprimir los personajes : 
   var getInfo = function getInfo() {
     var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
+    xhr.onreadystatechange = function() {
       if (xhr.readyState === 4 && xhr.status === 200) {
         var data = JSON.parse(this.responseText);
         var result = data.results;
@@ -45,7 +44,7 @@ searchButton.on('click', function () {
   console.log(getInfo());
   var printFigure = function printFigure(data) {
     console.log(data);
-    data.forEach(function (element, index) {
+    data.forEach(function(element, index) {
       var image = 'https://starwars-visualguide.com/assets/img/characters/' + (index + 1) + '.jpg';
       var newImage = document.createElement('img');
       newImage.setAttribute('src', image);
