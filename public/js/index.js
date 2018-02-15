@@ -2,15 +2,14 @@
 
 // Obtener 9 imágenes random
 var container = document.querySelector('.img-container-js');
-for (var i = 0; i < 9; i++) {
-  var numberRandom = Math.floor(Math.random() * 87 + 1);
-  var images = 'https://starwars-visualguide.com/assets/img/characters/' + numberRandom + '.jpg';
+for (var i = 1; i < 10; i++) {
+  var images = 'https://starwars-visualguide.com/assets/img/characters/' + i + '.jpg';
 
   var newImage = document.createElement('img');
   newImage.setAttribute('src', images);
   newImage.setAttribute('class', 'img-style');
   newImage.setAttribute('draggable', 'true');
-  newImage.setAttribute('id', numberRandom);
+  newImage.setAttribute('id', i - 1);
   newImage.dataset.dataToggle = 'modal';
   newImage.dataset.dataTarget = '#exampleModalCenter';
   container.appendChild(newImage);
@@ -28,12 +27,8 @@ searchButton.on('click', function () {
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
       var data = JSON.parse(this.responseText);
-      console.log(data);
-
       var result = data.results;
-      console.log(result);
       var long = data.results.length;
-      console.log(long);
       xhr.onload = printFigure(result);
       xhr.onerror = handleError;
     };
@@ -42,16 +37,15 @@ searchButton.on('click', function () {
   xhr.send();
 
   var printFigure = function printFigure(data) {
-    console.log(data);
-    data.forEach(function (element, index) {
-      var image = 'https://starwars-visualguide.com/assets/img/characters/' + (index + 1) + '.jpg';
-      var newImage = document.createElement('img');
-      newImage.setAttribute('src', image);
-      newImage.setAttribute('name', element.name);
-      newImage.setAttribute('class', 'img-style');
-      newImage.setAttribute('id', index + 1);
-      container.appendChild(newImage);
-    });
+    // data.forEach((element, index) => {
+    //   let image = `https://starwars-visualguide.com/assets/img/characters/${index + 1}.jpg`;
+    //   let newImage = document.createElement('img');
+    //   newImage.setAttribute('src', image);
+    //   newImage.setAttribute('name', element.name);
+    //   newImage.setAttribute('class', 'img-style');
+    //   newImage.setAttribute('id', index + 1);
+    //   container.appendChild(newImage);
+    // });
 
     // Modal
     var collectionImages = document.getElementsByClassName('img-style');
@@ -60,10 +54,24 @@ searchButton.on('click', function () {
       var element = collectionImages[_i];
       element.addEventListener('click', function () {
         var id = element.id;
-        var uri = 'https://swapi.co/api/people/' + id;
-        var name = data.name;
+        var name = data[id].name;
+        var height = data[id].height;
+        var hairColor = data[id].hair_color;
+        var birthYear = data[id].birth_year;
+        var gender = data[id].gender;
 
-        console.log(uri);
+        var title = document.getElementById('title');
+        var heightModal = document.getElementById('height');
+        var hairColorModal = document.getElementById('hairColor');
+        var birthYearModal = document.getElementById('birthYear');
+        var genderModal = document.getElementById('gender');
+
+        title.innerHTML = name;
+        heightModal.innerHTML = height;
+        hairColorModal.innerHTML = hairColor;
+        birthYearModal.innerHTML = birthYear;
+        genderModal.innerHTML = gender;
+
         $('#exampleModalCenter').modal(element);
       });
     };
