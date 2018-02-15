@@ -14,7 +14,7 @@ for (var i = 0; i < 9; i++) {
   newImage.setAttribute('id', numberRandom);
   container.appendChild(newImage);
 };
-// función búsqueda : 
+// función que trae los datos : 
 var searchButton = $('.search-js');
 var input = $('.input-js');
 console.log(input);
@@ -51,7 +51,6 @@ searchButton.on('click', function() {
       newImage.setAttribute('name', element.name);
       newImage.setAttribute('class', 'img-thumbnail');
       newImage.setAttribute('class', 'img-style');
-      // newImage.setAttribute('draggable', 'true');
       newImage.setAttribute('id', index + 1);
       container.appendChild(newImage);
     });
