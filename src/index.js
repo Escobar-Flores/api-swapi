@@ -7,7 +7,6 @@ for (let i = 0; i < 9; i++) {
   
   let newImage = document.createElement('img');
   newImage.setAttribute('src', images);
-  newImage.setAttribute('class', 'img-thumbnail');
   newImage.setAttribute('class', 'img-style');
   newImage.setAttribute('draggable', 'true');
   newImage.setAttribute('id', numberRandom);
