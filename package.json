@@ -1,0 +1,28 @@
+{
+  "name": "api-swapi",
+  "version": "1.0.0",
+  "description": "Proyecto que utiliza el API de Star Wars",
+  "scripts": {
+    "build": "babel src -d public/js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Escobar-Flores/api-swapi.git"
+  },
+  "keywords": [
+    "swapi"
+  ],
+  "author": "Rocci Escobar y Manuela Flores",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Escobar-Flores/api-swapi/issues"
+  },
+  "homepage": "https://github.com/Escobar-Flores/api-swapi#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
