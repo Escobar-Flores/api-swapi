@@ -48,15 +48,15 @@ El proyecto presenta los siguientes archivos para uso del usuario:
 ## Ejemplo
 * Vista principal del proyecto :
 
-![Con titulo](public/assets/docs/vista_mobile.png "Vista mobile")
+![Con titulo](public/assets/images/mobile-1.png "Vista mobile")
 
 * Vista pop up , al momento de hacer click en "Iniciar" :
 
-![Imagen del buscador](public/assets/docs/pop-over.png "Vista del personaje filtrado")
+![Imagen del buscador](public/assets/images/pop-up.png "Vista del personaje filtrado")
 
 * Vista del modal:
 
-![Imagen del modal](public/assets/docs/modal.png "Modal")
+![Imagen del modal](public/assets/images/modal.png "Modal")
 
 ***
 
