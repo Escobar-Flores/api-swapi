@@ -42,7 +42,7 @@ El proyecto presenta los siguientes archivos para uso del usuario:
 ***
 
 ## Uso
-* El usuario tiene disponible un buscador donde podrá filtrar los personajes por su nombre.
+* El usuario debe hacer click en "iniciar" para activar informacion disponible y mostrarlo a travez de un modal.
 * Al hacer click sobre la imagen filtrada, el usuario puede ver un modal con toda la información del personaje que busca.
 
 ## Ejemplo
