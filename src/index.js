@@ -15,12 +15,8 @@ for (let i = 1; i < 10; i++) {
 
 // función que trae los datos
 const searchButton = $('.search-js');
-// const input = $('.input-js');
 
-searchButton.on('click', () => {
-  // let valueInput = input.val();
-
-  // Función para imprimir los personajes  
+searchButton.on('click', () => { 
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
@@ -35,16 +31,6 @@ searchButton.on('click', () => {
   xhr.send();
   
   let printFigure = (data) => {
-    // data.forEach((element, index) => {
-    //   let image = `https://starwars-visualguide.com/assets/img/characters/${index + 1}.jpg`;
-    //   let newImage = document.createElement('img');
-    //   newImage.setAttribute('src', image);
-    //   newImage.setAttribute('name', element.name);
-    //   newImage.setAttribute('class', 'img-style');
-    //   newImage.setAttribute('id', index + 1);
-    //   container.appendChild(newImage);
-    // });
-
     // Modal
     const collectionImages = document.getElementsByClassName('img-style');
 

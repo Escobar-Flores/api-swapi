@@ -1,6 +1,6 @@
 'use strict';
 
-// Obtener 9 imágenes random
+// Obtener imágenes de los personajes
 var container = document.querySelector('.img-container-js');
 for (var i = 1; i < 10; i++) {
   var images = 'https://starwars-visualguide.com/assets/img/characters/' + i + '.jpg';
@@ -15,14 +15,10 @@ for (var i = 1; i < 10; i++) {
   container.appendChild(newImage);
 };
 
-// función que trae los datos
+// Función que trae los datos
 var searchButton = $('.search-js');
-// const input = $('.input-js');
 
 searchButton.on('click', function () {
-  // let valueInput = input.val();
-
-  // Función para imprimir los personajes  
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
@@ -37,16 +33,6 @@ searchButton.on('click', function () {
   xhr.send();
 
   var printFigure = function printFigure(data) {
-    // data.forEach((element, index) => {
-    //   let image = `https://starwars-visualguide.com/assets/img/characters/${index + 1}.jpg`;
-    //   let newImage = document.createElement('img');
-    //   newImage.setAttribute('src', image);
-    //   newImage.setAttribute('name', element.name);
-    //   newImage.setAttribute('class', 'img-style');
-    //   newImage.setAttribute('id', index + 1);
-    //   container.appendChild(newImage);
-    // });
-
     // Modal
     var collectionImages = document.getElementsByClassName('img-style');
 
