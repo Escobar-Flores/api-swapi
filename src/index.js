@@ -1,4 +1,4 @@
-// Obtener 9 imágenes random
+// Obtener 9 fotos de personajes
 let container = document.querySelector('.img-container-js');
 for (let i = 1; i < 10; i++) {
   const images = `https://starwars-visualguide.com/assets/img/characters/${i}.jpg`;
@@ -13,6 +13,13 @@ for (let i = 1; i < 10; i++) {
   container.appendChild(newImage);
 };
 
+// Popovers de botón "iniciar"
+$(function() {
+  $('.search-js').popover({
+    container: 'body'
+  });
+});
+
 // función que trae los datos
 const searchButton = $('.search-js');
 
@@ -24,14 +31,14 @@ searchButton.on('click', () => {
       let result = data.results;
       let long = data.results.length;
       xhr.onload = printFigure(result);
-      xhr.onerror = handleError;
+      xhr.onerror = handleError;      
     };
   };
   xhr.open('GET', 'https://swapi.co/api/people/');
   xhr.send();
   
   let printFigure = (data) => {
-    // Modal
+    // Información para el modal
     const collectionImages = document.getElementsByClassName('img-style');
 
     for (let i = 0; i < collectionImages.length; i++) {
