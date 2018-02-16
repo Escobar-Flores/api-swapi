@@ -50,9 +50,9 @@ El proyecto presenta los siguientes archivos para uso del usuario:
 
 ![Con titulo](public/assets/docs/vista_mobile.png "Vista mobile")
 
-* Vista del personaje filtrado :
+* Vista pop up , al momento de hacer click en "Iniciar" :
 
-![Imagen del buscador](public/assets/docs/buscador.png "Vista del personaje filtrado")
+![Imagen del buscador](public/assets/docs/pop-over.png "Vista del personaje filtrado")
 
 * Vista del modal:
 
